@@ -1,0 +1,19 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: black;
+  margin: 0.5rem;
+}
+form {
+  margin-bottom: 2rem;
+}
+.form-cars {
+  display: flex;
+  gap: 0.3rem;
+}
+.form-pages {
+  display: flex;
+  gap: 0.2rem;
+}
