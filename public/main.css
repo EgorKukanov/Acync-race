@@ -17,3 +17,6 @@ form {
   display: flex;
   gap: 0.2rem;
 }
+.submit-button {
+  width: 70px;
+}
