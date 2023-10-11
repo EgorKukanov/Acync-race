@@ -78,8 +78,7 @@ controllersForm.append(buttonGenerate);
 pagesForm.className = "form-pages";
 createForm.className = "form-cars";
 updateForm.className = "form-cars";
-controllersForm.className = "form-controllers"
-
+controllersForm.className = "form-controllers";
 
 document.body.appendChild(pagesForm);
 document.body.appendChild(createForm);
