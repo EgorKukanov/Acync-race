@@ -9,6 +9,13 @@ body {
 form {
   margin-bottom: 2rem;
 }
+button {
+  font-size: 12px;
+  font-weight: bold;
+}
+button:active {
+  transform: scale(0.98);
+}
 .form-cars {
   display: flex;
   gap: 0.3rem;
@@ -17,6 +24,26 @@ form {
   display: flex;
   gap: 0.2rem;
 }
+.form-controllers {
+  display: flex;
+  gap: 5px;
+}
 .submit-button {
-  width: 70px;
+}
+.garage-button,
+.winners-button,
+.race-button,
+.reset-button {
+  background-color: rgb(193, 255, 193);
+  border: 0;
+  border-bottom: 3px solid green;
+  border-radius: 5px;
+}
+.create-button,
+.update-button,
+.generate-button {
+  background-color: rgb(206, 206, 255);
+  border: 0;
+  border-bottom: 3px solid rgb(106, 106, 250);
+  border-radius: 5px;
 }

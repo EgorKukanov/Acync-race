@@ -1,10 +1,14 @@
 const pagesForm = document.createElement("form");
 const createForm = document.createElement("form");
 const updateForm = document.createElement("form");
+const controllersForm = document.createElement("form");
 const buttonGarage = document.createElement("button");
 const buttonWinners = document.createElement("button");
 const buttonCreate = document.createElement("button");
 const buttonUpdate = document.createElement("button");
+const buttonRace = document.createElement("button");
+const buttonReset = document.createElement("button");
+const buttonGenerate = document.createElement("button");
 const inputNameCreate = document.createElement("input");
 const inputColorCreate = document.createElement("input");
 const inputNameUpdate = document.createElement("input");
@@ -38,12 +42,24 @@ inputColorUpdate.id = "car-color";
 inputColorUpdate.classList.add("input-field");
 
 buttonCreate.type = "submit";
-buttonCreate.textContent = "create";
-buttonCreate.className = "submit-button";
+buttonCreate.textContent = "CREATE";
+buttonCreate.className = "create-button";
 
 buttonUpdate.type = "submit";
-buttonUpdate.textContent = "update";
-buttonUpdate.className = "submit-button";
+buttonUpdate.textContent = "UPDATE";
+buttonUpdate.className = "update-button";
+
+buttonRace.type = "submit";
+buttonRace.textContent = "RACE";
+buttonRace.className = "race-button";
+
+buttonReset.type = "submit";
+buttonReset.textContent = "RESET";
+buttonReset.className = "reset-button";
+
+buttonGenerate.type = "submit";
+buttonGenerate.textContent = "GENERATE CARS";
+buttonGenerate.className = "generate-button";
 
 carList.id = "car-list";
 
@@ -55,11 +71,18 @@ createForm.appendChild(buttonCreate);
 updateForm.appendChild(inputNameUpdate);
 updateForm.appendChild(inputColorUpdate);
 updateForm.appendChild(buttonUpdate);
+controllersForm.append(buttonRace);
+controllersForm.append(buttonReset);
+controllersForm.append(buttonGenerate);
+
 pagesForm.className = "form-pages";
 createForm.className = "form-cars";
 updateForm.className = "form-cars";
+controllersForm.className = "form-controllers"
+
 
 document.body.appendChild(pagesForm);
 document.body.appendChild(createForm);
 document.body.appendChild(updateForm);
+document.body.appendChild(controllersForm);
 document.body.appendChild(carList);
