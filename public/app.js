@@ -13,6 +13,7 @@ const inputNameCreate = document.createElement("input");
 const inputColorCreate = document.createElement("input");
 const inputNameUpdate = document.createElement("input");
 const inputColorUpdate = document.createElement("input");
+const textGarage = document.createElement("p");
 const carList = document.createElement("div");
 
 buttonGarage.type = "submit";
@@ -41,7 +42,7 @@ inputColorUpdate.type = "color";
 inputColorUpdate.id = "car-color";
 inputColorUpdate.classList.add("input-field");
 
-buttonCreate.type = "submit";
+buttonCreate.type = "button";
 buttonCreate.textContent = "CREATE";
 buttonCreate.className = "create-button";
 
@@ -60,6 +61,14 @@ buttonReset.className = "reset-button";
 buttonGenerate.type = "submit";
 buttonGenerate.textContent = "GENERATE CARS";
 buttonGenerate.className = "generate-button";
+
+textGarage.id = 'garageText';
+textGarage.textContent = 'GARAGE(0)';
+let count = 0;
+buttonCreate.addEventListener('click', () => {
+    count += 1;
+    garageText.textContent = `GARAGE(${count})`;
+})
 
 carList.id = "car-list";
 
@@ -85,3 +94,4 @@ document.body.appendChild(createForm);
 document.body.appendChild(updateForm);
 document.body.appendChild(controllersForm);
 document.body.appendChild(carList);
+document.body.appendChild(textGarage);

@@ -47,3 +47,8 @@ button:active {
   border-bottom: 3px solid rgb(106, 106, 250);
   border-radius: 5px;
 }
+
+#garageText {
+  font-size: 2rem;
+  color: #fff;
+}
