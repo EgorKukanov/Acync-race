@@ -41,7 +41,7 @@ button:active {
 }
 .create-button,
 .update-button,
-.generate-button {
+#generateButton {
   background-color: rgb(206, 206, 255);
   border: 0;
   border-bottom: 3px solid rgb(106, 106, 250);

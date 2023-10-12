@@ -58,17 +58,12 @@ buttonReset.type = "submit";
 buttonReset.textContent = "RESET";
 buttonReset.className = "reset-button";
 
-buttonGenerate.type = "submit";
+buttonGenerate.type = "button";
 buttonGenerate.textContent = "GENERATE CARS";
-buttonGenerate.className = "generate-button";
+buttonGenerate.id = "generateButton";
 
 textGarage.id = 'garageText';
 textGarage.textContent = 'GARAGE(0)';
-let count = 0;
-buttonCreate.addEventListener('click', () => {
-    count += 1;
-    garageText.textContent = `GARAGE(${count})`;
-})
 
 carList.id = "car-list";
 
@@ -95,3 +90,16 @@ document.body.appendChild(updateForm);
 document.body.appendChild(controllersForm);
 document.body.appendChild(carList);
 document.body.appendChild(textGarage);
+
+// controllers
+
+let count = 0;
+buttonCreate.addEventListener('click', () => {
+    count += 1;
+    garageText.textContent = `GARAGE(${count})`;
+})
+
+buttonGenerate.addEventListener('click', () => {
+    count += 100;
+    garageText.textContent = `GARAGE(${count})`;
+})
