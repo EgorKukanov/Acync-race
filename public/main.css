@@ -16,6 +16,10 @@ button {
 button:active {
   transform: scale(0.98);
 }
+p {
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
 .form-cars {
   display: flex;
   gap: 0.3rem;
@@ -49,6 +53,11 @@ button:active {
 }
 
 #garageText {
-  font-size: 2rem;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+#pageText {
+  font-size: 1rem;
   color: #fff;
 }

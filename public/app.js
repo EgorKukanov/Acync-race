@@ -14,6 +14,7 @@ const inputColorCreate = document.createElement("input");
 const inputNameUpdate = document.createElement("input");
 const inputColorUpdate = document.createElement("input");
 const textGarage = document.createElement("p");
+const textPage = document.createElement("p");
 const carList = document.createElement("div");
 
 buttonGarage.type = "submit";
@@ -63,7 +64,9 @@ buttonGenerate.textContent = "GENERATE CARS";
 buttonGenerate.id = "generateButton";
 
 textGarage.id = 'garageText';
-textGarage.textContent = 'GARAGE(0)';
+textGarage.textContent = 'GARAGE (0)';
+textPage.id = 'pageText';
+textPage.textContent = 'Page #1'
 
 carList.id = "car-list";
 
@@ -90,16 +93,24 @@ document.body.appendChild(updateForm);
 document.body.appendChild(controllersForm);
 document.body.appendChild(carList);
 document.body.appendChild(textGarage);
+document.body.appendChild(textPage);
 
 // controllers
 
 let count = 0;
 buttonCreate.addEventListener('click', () => {
     count += 1;
-    garageText.textContent = `GARAGE(${count})`;
+    garageText.textContent = `GARAGE (${count})`;
+    if (count > 7) {
+        textPage.textContent = `Page #${Math.floor(count / 7) + 1}`;
+    }
 })
 
 buttonGenerate.addEventListener('click', () => {
     count += 100;
-    garageText.textContent = `GARAGE(${count})`;
+    garageText.textContent = `GARAGE (${count})`;
+    if (count > 7) {
+        textPage.textContent = `Page #${Math.floor(count / 7) + 1}`;
+    }
 })
+
