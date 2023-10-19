@@ -100,14 +100,16 @@ p {
   bottom: 0;
 }
 .prev-button {
-  background-color: rgb(193, 255, 193);
+  background-color: gray;
   border: 0;
   border-bottom: 3px solid green;
   border-radius: 5px;
+  opacity: 0.5;
 }
 .next-button {
-  background-color: rgb(193, 255, 193);
+  background-color: gray;
   border: 0;
   border-bottom: 3px solid green;
   border-radius: 5px;
+  opacity: 0.5;
 }

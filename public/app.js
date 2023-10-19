@@ -120,6 +120,7 @@ let cars = [];
 let currentPage = 1;
 
 function displayCars(page) {
+
     carList.innerHTML = '';
     let start = (page - 1) * 7;
     let end = start + 7;
@@ -130,6 +131,26 @@ function displayCars(page) {
         carList.appendChild(car.row2);
         carList.appendChild(car.lineDashed);
     });
+
+    if (page === 1) {
+        buttonPrev.style.backgroundColor = 'gray';
+        buttonPrev.disabled = true;
+        buttonPrev.style.opacity = "0.5";
+    } else {
+        buttonPrev.style.backgroundColor = 'rgb(193, 255, 193)';
+        buttonPrev.disabled = false;
+        buttonPrev.style.opacity = "1";
+    }
+
+    if (page === Math.ceil(cars.length / 7)) {
+        buttonNext.style.backgroundColor = 'gray';
+        buttonNext.style.opacity = "0.5";
+        buttonNext.disabled = true;
+    } else {
+        buttonNext.style.backgroundColor = 'rgb(193, 255, 193)';
+        buttonNext.disabled = false;
+        buttonNext.style.opacity = "1";
+    }
 }
 
 let count = 0;
