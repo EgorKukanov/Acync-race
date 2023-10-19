@@ -85,6 +85,8 @@ p {
 }
 
 .flag-image {
+  position: fixed;
+  right: 10%;
   display: block;
   width: 22px;
   height: auto;
