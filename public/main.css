@@ -35,7 +35,7 @@ p {
 }
 .form-controllers {
   display: flex;
-  gap: 5px;
+  gap: 0.2rem;
 }
 .submit-button {
 }
@@ -92,4 +92,22 @@ p {
 .line-dashed {
   border-bottom: 2px dashed;
   color: #fff;
+}
+.form-pagination {
+  display: flex;
+  gap: 0.2rem;
+  position: fixed;
+  bottom: 0;
+}
+.prev-button {
+  background-color: rgb(193, 255, 193);
+  border: 0;
+  border-bottom: 3px solid green;
+  border-radius: 5px;
+}
+.next-button {
+  background-color: rgb(193, 255, 193);
+  border: 0;
+  border-bottom: 3px solid green;
+  border-radius: 5px;
 }

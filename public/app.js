@@ -1,6 +1,7 @@
 const pagesForm = document.createElement("form");
 const createForm = document.createElement("form");
 const updateForm = document.createElement("form");
+const paginationForm = document.createElement("form");
 const controllersForm = document.createElement("form");
 const buttonGarage = document.createElement("button");
 const buttonWinners = document.createElement("button");
@@ -16,6 +17,8 @@ const inputColorUpdate = document.createElement("input");
 const textGarage = document.createElement("p");
 const textPage = document.createElement("p");
 const carList = document.createElement("div");
+const buttonPrev = document.createElement("button");
+const buttonNext = document.createElement("button");
 
 
 buttonGarage.type = "submit";
@@ -64,6 +67,15 @@ buttonGenerate.type = "button";
 buttonGenerate.textContent = "GENERATE CARS";
 buttonGenerate.id = "generateButton";
 
+buttonPrev.type = "button";
+buttonPrev.textContent = "PREV";
+buttonPrev.className = "prev-button"
+
+buttonNext.textContent = "NEXT";
+buttonNext.type = "button";
+buttonNext.className = "next-button"
+
+
 textGarage.id = 'garageText';
 textGarage.textContent = 'GARAGE (0)';
 textPage.id = 'pageText';
@@ -82,11 +94,14 @@ updateForm.appendChild(buttonUpdate);
 controllersForm.append(buttonRace);
 controllersForm.append(buttonReset);
 controllersForm.append(buttonGenerate);
+paginationForm.append(buttonPrev);
+paginationForm.append(buttonNext);
 
 pagesForm.className = "form-pages";
 createForm.className = "form-cars";
 updateForm.className = "form-cars";
 controllersForm.className = "form-controllers";
+paginationForm.className = "form-pagination"
 
 document.body.appendChild(pagesForm);
 document.body.appendChild(createForm);
@@ -95,8 +110,27 @@ document.body.appendChild(controllersForm);
 document.body.appendChild(textGarage);
 document.body.appendChild(textPage);
 document.body.appendChild(carList);
+document.body.appendChild(paginationForm);
+
 
 // controllers
+
+
+let cars = [];
+let currentPage = 1;
+
+function displayCars(page) {
+    carList.innerHTML = '';
+    let start = (page - 1) * 7;
+    let end = start + 7;
+    let pageCars = cars.slice(start, end);
+
+    pageCars.forEach(car => {
+        carList.appendChild(car.row1);
+        carList.appendChild(car.row2);
+        carList.appendChild(car.lineDashed);
+    });
+}
 
 let count = 0;
 
@@ -150,9 +184,9 @@ buttonCreate.addEventListener('click', () => {
     const lineDashed = document.createElement("div");
     lineDashed.className = 'line-dashed'
 
-    carList.appendChild(row1);
-    carList.appendChild(row2);
-    carList.appendChild(lineDashed);
+    cars.push({ row1, row2, lineDashed });
+
+    displayCars(currentPage);
 
     count += 1;
     garageText.textContent = `GARAGE (${count})`;
@@ -161,6 +195,7 @@ buttonCreate.addEventListener('click', () => {
     }
 })
 
+
 buttonGenerate.addEventListener('click', () => {
     count += 100;
     garageText.textContent = `GARAGE (${count})`;
@@ -168,4 +203,18 @@ buttonGenerate.addEventListener('click', () => {
         textPage.textContent = `Page #${Math.floor(count / 7) + 1}`;
     }
 })
+
+buttonPrev.addEventListener('click', () => {
+    if (currentPage > 1) {
+        currentPage--;
+        displayCars(currentPage);
+    }
+});
+
+buttonNext.addEventListener('click', () => {
+    if (currentPage < Math.ceil(cars.length / 7)) {
+        currentPage++;
+        displayCars(currentPage);
+    }
+});
 
