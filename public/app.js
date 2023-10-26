@@ -265,6 +265,8 @@ buttonGenerate.addEventListener('click', () => {
         row2.appendChild(carImage);
         row2.appendChild(flagImage);
 
+        carName.className = "car-name";
+        carName.textContent = `Car ${Math.floor(Math.random() * 100)}`;
         const lineDashed = document.createElement("div");
         lineDashed.className = 'line-dashed'
 
