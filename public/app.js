@@ -218,6 +218,60 @@ buttonCreate.addEventListener('click', () => {
 
 
 buttonGenerate.addEventListener('click', () => {
+    for (let i = 0; i < 100; i++) {
+        const row1 = document.createElement("div");
+        const row2 = document.createElement("div");
+
+        const selectButton = document.createElement("button");
+        selectButton.type = "button"
+        selectButton.className = "select";
+        selectButton.textContent = "Select";
+
+        const removeButton = document.createElement("button");
+        removeButton.type = "button";
+        removeButton.className = "remove";
+        removeButton.textContent = "Remove";
+
+        const carName = document.createElement("span");
+        carName.className = "car-name";
+        carName.textContent = inputNameCreate.value;
+
+        row1.appendChild(selectButton);
+        row1.appendChild(removeButton);
+        row1.appendChild(carName);
+
+        const buttonA = document.createElement("button");
+        buttonA.type = "button"
+        buttonA.className = "A";
+        buttonA.textContent = "A";
+
+        const buttonB = document.createElement("button");
+        buttonB.type = "button"
+        buttonB.className = "B";
+        buttonB.textContent = "B";
+
+        const carImage = document.createElement("img");
+        carImage.className = "car-image"
+        carImage.src = "./assets/car.svg";
+        carImage.alt = "car-image";
+
+        const flagImage = document.createElement("img");
+        flagImage.className = "flag-image"
+        flagImage.src = "./assets/flag.png";
+        flagImage.alt = "flag-image";
+
+        row2.appendChild(buttonA);
+        row2.appendChild(buttonB);
+        row2.appendChild(carImage);
+        row2.appendChild(flagImage);
+
+        const lineDashed = document.createElement("div");
+        lineDashed.className = 'line-dashed'
+
+        cars.push({ row1, row2, lineDashed });
+    }
+
+    displayCars(currentPage);
     count += 100;
     garageText.textContent = `GARAGE (${count})`;
     if (count > 7) {
