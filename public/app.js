@@ -206,14 +206,10 @@ buttonCreate.addEventListener('click', () => {
     lineDashed.className = 'line-dashed'
 
     cars.push({ row1, row2, lineDashed });
-
-    displayCars(currentPage);
-
+    currentPage = 1;
     count += 1;
+    displayCars(currentPage);
     garageText.textContent = `GARAGE (${count})`;
-    if (count > 7) {
-        textPage.textContent = `Page #${Math.floor(count / 7) + 1}`;
-    }
 })
 
 
@@ -265,6 +261,7 @@ buttonGenerate.addEventListener('click', () => {
         row2.appendChild(carImage);
         row2.appendChild(flagImage);
 
+
         carName.className = "car-name";
         carName.textContent = `Car ${Math.floor(Math.random() * 100)}`;
         const lineDashed = document.createElement("div");
@@ -276,15 +273,13 @@ buttonGenerate.addEventListener('click', () => {
     displayCars(currentPage);
     count += 100;
     garageText.textContent = `GARAGE (${count})`;
-    if (count > 7) {
-        textPage.textContent = `Page #${Math.floor(count / 7) + 1}`;
-    }
 })
 
 buttonPrev.addEventListener('click', () => {
     if (currentPage > 1) {
         currentPage--;
         displayCars(currentPage);
+        textPage.textContent = `Page #${currentPage}`;
     }
 });
 
@@ -292,6 +287,7 @@ buttonNext.addEventListener('click', () => {
     if (currentPage < Math.ceil(cars.length / 7)) {
         currentPage++;
         displayCars(currentPage);
+        textPage.textContent = `Page #${currentPage}`;
     }
 });
 
